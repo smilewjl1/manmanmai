@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>优惠券列表页面</title>
+	<!-- 1. 引入mui的CSS文件 提供mui样式 -->
+	<link rel="stylesheet" href="lib/mui/css/mui.css">
+	<!-- 2. 引入字体图标的CSS文件  提供字体图标-->
+	<link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+	<!-- 3. 引入主页的less文件 注意 rel="stylesheet/less"-->
+	<link rel="stylesheet/less" href="less/getcouponproduct.less">
+	<!-- 4. 引入less的编译器文件 编译less -->
+	<script src="lib/less/less.js"></script>
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<div class="left">
+			<a href="getcoupon.html" class="fa fa-angle-left"></a>
+		</div>
+		<div class="center">
+			<h4>优惠券</h4>
+		</div>
+		<div class="right">
+			<a href="#"><img src="images/header_app.png" alt="手机app下载"></a>
+		</div>
+	</header>
+	<section id="reminder">
+		<span>--点餐前出示手中的优惠券，即可享受优惠--</span>
+	</section>
+	<!-- 中间主体区域 -->
+	<main id="main">
+		<div class="cu-list">
+			<ul class="coupou-list mui-slider">
+				<li class="ui-border-b mui-slider-group">
+					<a href="#" class="mui-slider-item">
+						<div class="pic .mui-backdrop">
+							<img src="images/2.jpg">
+						</div>
+						<div class="info">
+								<div class="title"> 
+									<span>必胜客以单品价点购任意饮料免费续杯一次</span>
+									<span class="price">¥28</span>
+								</div>
+								<div class="other">
+									<span class="mall">有效期至2017年01月06日</span>
+								</div>
+						</div>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</main>
+	<!-- 底部区域 -->
+	<footer id="footer">
+        <div class="footer-top">
+            <a href="#">登录</a> 
+            <a href="#">注册</a> 
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+           </a>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                <a href="#" style="color: Red;">手机APP下载</a> <a href="#">
+                    慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>
+                m.manmanbuy.com		
+            </p>
+        </div>
+	</footer>
+	<div class="mask mui-slider ">
+  		<div class="mui-slider-group mui-slider-loop">
+    	<!--支持循环，需要重复图片节点-->
+    		<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/2.jpg" /></a></div>
+    		<div class="mui-slider-item"><a href="#"><img src="images/2.jpg" /></a></div>
+    		<div class="mui-slider-item"><a href="#"><img src="images/2.jpg" /></a></div>
+    		<div class="mui-slider-item"><a href="#"><img src="images/2.jpg" /></a></div>
+    		<div class="mui-slider-item"><a href="#"><img src="images/2.jpg" /></a></div>
+    	<!--支持循环，需要重复图片节点-->
+    		<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/2.jpg" /></a></div>
+  		</div>
+	</div>
+	<!-- 创建优惠券列表模板 -->
+	<script id='couponlistTmp' type='text/html'>
+		{{each result value i}}
+			<li class="ui-border-b">
+					<a href="#" data-id="{{value.couponId}}">
+						<div class="pic">{{@value.couponProductImg}}</div>
+						<div class="info">
+								<div class="title"> 
+									<span>{{value.couponProductName}}</span>
+									<span class="price">{{value.couponProductPrice}}</span>
+								</div>
+								<div class="other">
+									<span class="mall">{{value.couponProductTime}}</span>
+								</div>
+						</div>
+						<a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					</a>
+			</li>
+		{{/each}}
+	</script>
+	<!-- 创建遮罩层轮播图模板 -->
+	<script id='sliderTmp' type='text/html'>
+		<!-- <div class="mui-slider"> -->
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/2.jpg" /></a></div>
+				{{each result value i}}
+    			<div class="mui-slider-item">
+    				<a <!-- data-id={{value.couponProductId}}  -->href="#">{{@value.couponProductImg}}
+    				<div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+    				</a>
+    			</div>
+    			{{/each}}
+    			<!--支持循环，需要重复图片节点-->
+    			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/2.jpg" /></a></div>
+    		</div>
+    	<!-- </div> -->
+	</script>
+	<!-- 5. 引入mui的js文件 提供mui js插件-->
+   <script src="lib/mui/js/mui.js"></script>
+   <!-- 6. 引入zepto的js文件 操作元素发送请求  zepto就相当于jquery-->
+   <script src="lib/zepto/zepto.min.js"></script>
+   <!-- 7. 引入模板引擎的js文件 渲染模板的template 3.0的模板因为  template-web是4.0最新模板引擎-->
+   <script src="lib/artTemplate/template-web.js"></script>
+   <!-- 8. 引入主页的js文件 -->
+   <script src="js/getcouponproduct.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+//引入公共样式文件 
+ @import "base.less";
+
+
+ //中间主体部分的样式
+ #main{
+     background-color: #fff;
+     padding-top: 102px;
+     #nav{
+         padding: 10px 0;
+         .mui-row{
+             >div{
+               
+                 text-align: center;
+                 a{
+                    display: block;
+                     img{
+                         width: 50px;
+                         height: 50px;
+                     }
+                     p{
+                         margin-top: 10px;
+                     }
+                 }
+                 &:nth-child(n+9){
+                    display: none;
+                 }
+                 &.active{
+                     display: block;
+                 }
+             }
+         }
+     }
+     #recommend{
+         .recommend-title{
+             background-color: @mainColor;
+             height: 36px;
+             line-height: 36px;
+             position: relative;
+             span{
+                padding-left: 10px;
+                color: #fff
+             }
+             img{
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 8px;
+                right: 10px;
+             }
+         }
+         .recommend-contant{
+            a{
+                display: flex;
+             
+            }
+            .mui-media-body{
+                padding-left: 10px;
+            }
+             img{
+                 width: 100px;
+                 height: 100px;
+                 max-width: 100px;
+             }
+             .title{
+                 white-space: normal;
+                 color: black;
+                 span{
+                     color: @mainColor;
+                 }
+             }
+           .time{
+              
+               font-size: 12px;
+               margin-top: 30px;
+               position: relative;
+               i,span{
+                   position: absolute;
+                   right: 25px;
+               }
+               span{
+                   right: 10px;
+               }
+           }
+        //    .comment{
+        //        position: absolute;
+        //        right: 20px;
+        //        bottom: 35px;
+        //        font-size: 14px;
+        //    }
+         }
+     }
+    
+ }
+ #more{
+    width: 100%;
+   
+    padding: 10px;
+    background-color: #f1f1f1;
+    
+    a{
+        display: block;
+        background-color: #fff;
+        font-size: 12px;
+        border-radius: 5px;
+        text-align: center;
+    }
+}
+
+ 

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买分类页</title>
+    <!-- 引入mui的css样式 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标的css的文件 -->
+    <link rel="stylesheet" href="./lib/font/iconfont.css">
+    <!-- 引入主页的less文件 -->
+    <link rel="stylesheet/less" href="./less/chenzhifen-category.less">
+    <!-- 引入less的编译器文件 -->
+    <script src="lib/less/less.js"></script>
+
+
+
+
+</head>
+
+<body id="topAnchor">
+    <!-- 头部区域 -->
+    <header id="header">
+        <!--header-img部分  -->
+        <div class="header-img">
+            <img class="left" src="https://img.alicdn.com/imgextra/i1/690311/TB2cMR0aQUmBKNjSZFOXXab2XXa_!!690311.png" alt="">
+            <img src="https://img.alicdn.com/imgextra/i2/690311/TB2beKvaTXYBeNkHFrdXXciuVXa_!!690311.png" alt="" class="right">
+        </div>
+        <!-- 搜索部分 -->
+        <div class="header-search">
+            <input type="text" placeholder="请输入要搜索的商品">
+            <button type="button" class="mui-btn mui-btn-warning">搜索</button>
+        </div>
+
+
+    </header>
+    <!-- 中间主体区域 -->
+    <main id="main">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">大家电</a>
+                <div class="mui-collapse-content">
+                    <p>
+                        <table class="fl_all " style="display: table;">
+                            <tbody id="table">
+                                <tr>
+                                    <td>
+                                        <a href="Prolist.aspx?id=4">平板电视</a>
+                                    </td>
+                                    <td>
+                                        <a href="Prolist.aspx?id=5">空调</a>
+                                    </td>
+                                    <td>
+                                        <a href="Prolist.aspx?id=63">家庭影院</a>
+                                    </td>
+                                </tr>
+                              
+                            </tbody>
+                        </table>
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <!-- <div class="title">
+            <span>品牌排行</span>
+            <img src="http://www.zuyushop.com/wap/images/more.png" alt="">
+        </div> -->
+        <div class="body">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#topAnchor">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" alt=""> 回到顶部
+            </a>
+        </div>
+        <div class="bottom">
+            <p>
+                <a href="http://m.manmanbuy.com/app.html?type=footword&amp;value=wap" onclick="trackEvent('footer下载');" style="color: Red;">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                m.manmanbuy.com
+                <img src="https://c.cnzz.com/wapstat.php?siteid=1256699064&amp;r=http%3a%2f%2fapp.manmanbuy.com%2fcuxiao.aspx&amp;rnd=1607889335"
+                    width="0" height="0">
+            </p>
+        </div>
+    </footer>
+
+    <!-- 创建标题的模板 -->
+    <script id="titleTmp" type="text/html">
+        {{each result value i}}
+        <ul class="mui-table-view"> 
+                <li class="mui-table-view-cell mui-collapse">
+                    <a class="mui-navigate-right title-btn" data-id='{{value.titleId}}' href="#">{{value.title}}</a>
+                    <div class="mui-collapse-content">
+                        <p> 
+                                <table class="fl_all " style="display: table;">
+                                        <tbody class="table">
+                                            
+                                          
+                                        </tbody>
+                                    </table>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            {{/each}}
+    
+    </script>
+   
+
+
+    <!-- 引入mui-js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的js文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板的js文件 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 引入主页的js文件 -->
+    <script src="js/chenzhifen-categroy.js"></script>
+
+</body>
+
+</html>

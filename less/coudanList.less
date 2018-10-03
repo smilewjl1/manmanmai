@@ -1,0 +1,133 @@
+@import "coudanbase.less";
+.title {
+    position: relative;
+    top: 45px;
+    z-index: 400;
+    .tab {
+        height: 40px;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        li {
+            float: left;
+            width: 33%;
+            text-align: center;
+            line-height: 40px;
+            background-color: #fff;
+            &.active {
+                background-color: #eee;
+            }
+        }
+    }
+    
+    .titlecontent{
+        position: absolute;
+        top: 40px;
+        width: 100%;
+        background-color:#fff;
+        z-index: 10;
+        .item{
+            width: 100%;
+            display: none;
+            &.on{
+                display: block;
+            }
+            ul{
+                width:100%;
+                li{
+                    width: 100%;
+                    border-bottom: 1px solid #eee;
+                    &.on{
+                        a{
+                            &:after{
+                                content: "✔";
+                                display: block;
+                                position: absolute;
+                                top: 0px;
+                                right: 20px;
+                                line-height: 40px;
+                                color: #ff8b00;
+                                width:20px;
+                                height: 20px;
+                             }
+                        }
+                    }
+                    a{
+                        position: relative;
+                        width: 100%;
+                        padding: 0px 20px;
+                        color: #5a5a5a;
+                        line-height: 40px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    // .mui-control {
+    //     &.on{
+    //         display: block;
+    //     }
+    //     .mui-table-view {
+    //         padding: 0 30px;
+    //         li {
+    //             height: 40px;
+    //             #btn-check {
+    //                 display: none;
+    //             }
+    //             &.on {
+    //                 #btn-check {
+    //                     display: block;
+    //                     float: right;
+    //                     font-size: 16px;
+    //                     color: @main-color;
+    //                 }
+    //             }
+    //             a {
+    //                 color: #000;
+    //                 line-height: 40px;
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+#main {
+    background-color: #f1f1f1; // 标题
+    // 商品详情
+    .shop {
+        margin: 5px;
+        ul {
+            li {
+                float: left;
+                width: 50%;
+                .shoplist {
+                    position: relative;
+                    background-color: #fff;
+                    margin: 5px;
+                    img {
+                        width: 186px;
+                        height: 186px;
+                    }
+                    p {
+                        color: #000;
+                        font-size: 12px;
+                        height: 30px;
+                        width: 100%;
+                        overflow: hidden;
+                        line-height: 30px;
+                        span {
+                            color: red;
+                            display: inline-block;
+                            font-size: 23px;
+                        }
+                        button {
+                            position: absolute;
+                            right: 10px;
+                            bottom: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

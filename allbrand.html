@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>品牌大全</title>
+    <!-- 引入mui 样式 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="./less/allbrand.less">
+    <script src="./lib/less/less.js"></script>
+
+
+</head>
+
+<body>
+   <div class="layout">
+        <!-- 头部区域 -->
+    <header id="header">
+            <div class="mui-row">
+                <div class="mui-col-xs-10 header_logo">
+                   <a href="index.html"> <img src="./images/header_logo.png" alt=""></a>
+                </div>
+                <div class="mui-col-xs-2 header_app">
+                    <a href="http://m.manmanbuy.com/app.html?type=headword&amp;value=wap" title="手机app下载">
+                        <img src="./images/header_app.png"alt="手机app下载">
+                        </a>
+                   
+                </div>
+            </div>
+    
+    
+        </header>
+        <!-- 导航区域 -->
+        <section id="search">
+            <div class="search-form">
+                <input type="text" class="search-input" placeholder="请输入你想比的商品">
+                <button type="button " class="btn-search">搜索</button>
+            </div>
+        </section>
+
+      
+        <section id="morebrand">
+            <div>
+                <a href="index.html">首页</a>
+                >
+                <a href="allbrand.html">品牌大全</a>
+            </div>
+        </section>
+    
+        <!-- 主体区域 -->
+        <main id="main">
+            <div class="title">
+                <span>热门品牌排行</span>
+            </div>
+            <div class="content">
+                <ul class="brandlist">
+                    <!-- <li>
+                        <a href="#">平板电视十大品牌
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                    </li>
+     -->
+    
+                </ul>
+    
+            </div>
+        </main>
+   </div>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="left">
+            <img src="./images/ic_cu.png" alt="" class="mui-pull-left">
+            <div>
+                <span>慢慢买</span>
+                <p>全网比价. 查历史价格</p>
+            </div>
+        </div>
+        <div class="right mui-pull-right">
+            <button type="button" class="mui-btn-open mui-btn-danger">立即打开</button>
+        </div>
+        <a href="javascript:void(0)"> <i class="iconfont icon-guanbi btn-guanbi"></i></a>
+    </footer>
+
+
+    <script type="text/html" id="brandlistTmp">
+        {{ each result value}}
+        <li >
+            <a href="allbrand-tenbrand.html?brandTitleId={{value.brandTitleId}}" data-id="{{value.id}}"  
+            data-category-id='{{value.categoryId}}' class="btn-brand" >{{value.brandTitle}}
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </li>
+    
+    {{ /each }}    
+    </script>
+
+
+
+
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/allbrand.js"></script>
+</body>
+
+</html>

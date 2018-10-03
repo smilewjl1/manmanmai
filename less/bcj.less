@@ -1,0 +1,253 @@
+// 页面主题色
+@mainColor:#fe4a65;
+*{
+    //定义整个页面为盒模型
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    max-width: 768px;
+    min-width: 375px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+ul,li{
+    list-style: none;
+}
+// 头部样式
+#header{
+    position: fixed;
+    width: 100%;
+    max-width: 768px;
+    background-color: @mainColor;
+    height: 45px;
+    text-align: center;
+    z-index: 900;
+    a{
+        position: absolute;
+        color: #fff;
+        line-height: 45px;
+        font-weight: 700;
+        display: block;
+        &.logo{
+            left: 0px;
+            width: 65px;
+        }
+        &.cate{
+            right:0px;
+            top: 0px;
+            width: 40px;
+            .icon-mulu{
+                font-size: 18px;
+            }
+        }
+    }
+   form{
+        width: 100%;
+        padding: 7px 40px 8px 65px;
+        input{
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            padding-left:10px; 
+            background-color: #fff;
+            text-align: left;
+        }
+    }
+}
+// 中间样式
+#main{
+    padding: 45px 0px 50px;
+    width: 100%;
+    background-color: #fff;
+    //轮播图
+    #banner{
+        width: 100%;
+        .mui-slider{
+            width: 100%;
+        }
+    }
+    #all{
+        width: 100%;
+        .nav{
+            height: 50px;
+            width: 100%;
+            font-size: 14px;
+            overflow: auto;
+            background-color: #fff;
+            // overflow: hidden;
+            &.static{
+                position: fixed;
+                z-index: 800;
+            }
+            ul{
+                width: 750px;
+                float: left;
+                li{
+                    float: left;
+                    padding: 0px 10px;
+                    a{
+                        display: block;
+                        height: 50px;
+                        line-height: 50px;
+                        color: #000;
+                        &.active{
+                            border-bottom: 3px solid @mainColor;
+                            color: @mainColor;
+                        }
+                    }
+                }
+            }
+        }
+        .content{
+            width: 100%;
+            position: relative;
+            top: 0px;
+            .mui-table-view{
+                .mui-table-view-cell{
+                    display: flex;
+                    .mui-media-object{
+                        max-width: 150px;
+                        flex: 2;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .mui-media-body{
+                        flex: 3;
+                        .product-title{
+                            font-size: 14px;
+                            span{
+
+                            }
+                        }
+                        .product-price{
+                            font-size: 20px;
+                            font-weight: 700;
+                            color: @mainColor;
+                            i{
+                                font-size: 14px;
+                                font-weight: normal;
+                                font-style: normal;
+                            }
+                            em{
+                                font-weight: normal;
+                                font-size: 10px;
+                            }
+                            del{
+                                padding-left:15px; 
+                                font-size: 12px;
+                                font-weight: normal;
+                                color: #aaa;
+                            }
+                        }
+                        .productCouponRemain{
+                            width: 100%;
+                            margin-top:5px;
+                            .bar{
+                                position: relative;
+                                a{
+                                    display: block;
+                                }
+                                i{
+                                    display: block;
+                                    width: 100px;
+                                    height: 12px;
+                                    background-color: rgb(255, 183, 183);
+                                    border: 1px solid @mainColor;
+                                    border-radius: 6px;
+                                    position: absolute;
+                                    text-align: center;
+                                    overflow: hidden;
+                                    em{
+                                        display: block;
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 0px;
+                                        // width: 75%;
+                                        background-color: @mainColor;
+                                        height: 10px;
+                                        border-radius: 6px;
+                                    }
+                                    span{
+                                        position: absolute;
+                                        top: 0px;
+                                        left: 40%;
+                                        color: #fff;
+                                        font-size: 10px;
+                                        z-index: 800;
+                                        font-weight:700;
+                                        line-height: 12px;
+                                    }
+                                }
+                                b{
+                                    position: absolute;
+                                    left: 110px;
+                                    color: @mainColor;
+                                    font-size: 10px;
+                                    font-weight: 400;
+                                    line-height: 12px;
+                                }
+                            }
+                        }
+                        .productCoupon{
+                            // margin: 10px 0px;
+                            // width: 100%;
+                            padding-top: 30px;
+                            float: left;
+                            a{
+                                display: block;
+                                height: 25px;
+                                border: 1px dotted @mainColor;
+                                color: @mainColor;
+                                font-size: 12px;
+                                width: 120px;
+                                text-align: center;
+                            }
+                        }
+                        .productHref{
+                            float: right;
+                            padding-top: 30px ;
+                            a{
+                                display: block;
+                                color: #fff;
+                                background-color: @mainColor;
+                                height: 25px;
+                                text-align: center;
+                                font-size: 12px;
+                                border-radius: 5px;
+                                line-height: 25px;
+                                padding: 0px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#footer{
+    position: fixed;
+    bottom: 20%;
+    right: 5%;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ddd;
+    background-color:#dddddd69;
+    border-radius: 50%;
+    text-align: center;
+    i{
+        color: #aaa;
+        line-height: 44px;
+        font-size: 40px;
+
+    }
+
+}

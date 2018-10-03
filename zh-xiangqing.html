@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>商品列表</title>
+    <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="less/zh-xiangqing.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="title">
+            <a href="index.html" class="logo"> <img src="images/header_logo.png" alt=""></a>
+            <a href="#" class="app"><img src="images/header_app.png" alt=""></a>
+        </div>
+        <div class="search">
+            <div class="box">
+                <input type="text" placeholder="&nbsp;&nbsp;请输入你想比价的商品">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <nav id="nav">
+            <!--             <a href="index.html">首页</a>
+            <span>></span>
+            <a href="zh-bijia.html">空调</a>
+            <span>></span>
+            <a href="#">单个商品</a>
+            <button>筛选</button> -->
+        </nav>
+        <section class="product">
+            <p>上的发生事故撒大苏打嘎斯公司发发的施工干撒大哥撒噶山豆根发生飞洒</p>
+            <img src="https://img.alicdn.com/bao/uploaded/i1/470168984/TB1kYXzxcUrBKNjSZPxXXX00pXa_!!0-item_pic.jpg_220x220.jpg" alt="">
+        </section>
+        <section class="pingjia">
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footerApp">
+            <div class="foot_top">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#" style="width：40%; border:0;">
+                    <img src="images/top.jpg" width="15" height="15">返回顶部
+                </a>
+            </div>
+            <div class="footer">
+                <p>
+                    <a href="#" style="color:red;">手机APP下载</a>
+                    <a style="color:black;">&nbsp;慢慢买手机版</a>— — 掌上比价平台
+                </p>
+                <p style="margin-top:-15px;font-size:13px;color:gray;">
+                    m.manmanbuy.com
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script id="navTmp" type="text/html">
+        {{each result1 value i}}
+        <a href="index.html">首页</a>
+        <span>></span>
+        <a href="zh-fenlei.html?categoryid={{value.data.result[0].categoryId}}">{{value.data.result[0].category}}</a>
+        <span>></span>
+        <a href="#">{{value.d1}}</a>
+        <button>筛选</button>
+        {{/each}}
+    </script>
+    <script id="ptxqTmp" type="text/html">
+        {{each result value i}}
+        <p>{{value.productName}}</p>
+        {{# value.productImg}}
+        <div class="box mui-row">
+            <div class="mui-col-xs-4">比价购买</div>
+            <div class="mui-col-xs-4">产品参数</div>
+            <div class="mui-col-xs-4">评论数(2333)</div>
+        </div>
+        {{# value.bjShop}} {{/each}}
+    </script>
+    <script id="pingjiaTmp" type="text/html">
+        <div class="box1">网友评价</div>
+        {{each result value i}}
+        <div class="box2f">
+            <div class="box2"><span>{{value.comName}}</span><span>{{value.comTime}}</span></div>
+            <div class="box3"><span>{{value.comFrom}}</span></div>
+            <div class="box4">
+                <p>{{value.comContent}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <!-- 引入js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap.js"></script> -->
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap-paginator.js"></script> -->
+    <script src="js/zh-xiangqing.js"></script>
+</body>
+
+</html>

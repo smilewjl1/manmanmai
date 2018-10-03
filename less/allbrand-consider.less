@@ -1,0 +1,233 @@
+
+html,body{
+    height: 100%;
+}
+body{
+    // background-color: #fff;
+}
+// 头部区域样式
+#header{
+    height: 50px;
+    background: #ff841d;
+    .mui-row{
+        // padding: 10px;
+        .header_logo{
+           padding: 10px;
+           img{
+           width: 185px;
+           height: 25px;
+              
+           }
+        }
+        .header_app{
+            padding: 8px;
+            img{
+                width: 34px;
+                height: 34px;
+            }
+        }
+    }
+}
+
+
+// 品牌大全
+#morebrand{
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    a{
+        font-size: 14px;
+        color: #666;
+    }
+    span{
+        font-size: 14px;
+    }
+}
+
+
+
+
+  // 筛选区域
+  #screen{
+     
+    background-color: #fff;
+    .Consider{
+        padding-left: 10px;
+        background-color: #ccc;
+
+        span{
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            color: chocolate;
+        
+        }
+    }
+    .productList{
+       
+       >ul{
+           padding: 0;
+           margin: 0px;
+           >li{
+               list-style: none;
+               border-bottom: 1px solid #ccc;
+            .productInfo{
+                display: flex;
+                padding:0px 10px;
+                .product-img{                                                                           
+                    img{
+                        width: 120px;
+                        height: 120px;
+
+                    }
+                                                          
+                }
+                .product-body{
+                    flex: 1;
+                    padding-left: 10px;
+                    padding-top: 10px;
+                    .product-name{
+                        white-space: pre-wrap;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;  //这里是在第二行有省略号
+                        overflow: hidden;
+                        color: #353030;
+                    }
+                    .price{
+                        color: red;
+                    }
+                    .price-comment{
+                        margin-top: 10px;
+                        font-size: 14px;
+                        color: rgb(87, 81, 81);
+                        .store{
+                           margin-right: 10px;
+                        }
+                      
+                    }
+                }
+
+            }
+           }
+        }
+    }
+}
+
+//  评论区域
+#coomment{
+    height: 400px;
+    .comment-title{
+        padding-left: 10px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background-color: #eee;
+        span{
+            display: block;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+            color: chocolate;
+        }
+    }
+    .comment-content{
+        background-color: #eee;
+     
+         a{
+            background-color: #ccc;
+             display: block;
+             .comment-product{
+                 display: flex;
+                .comment-product-img{
+                    padding: 10px;
+                    width: 120px;
+                    height: 120px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                p{
+                    flex: 1;
+                    padding: 10px;
+                    font-size: 16px;
+                    color: black;
+                }
+
+            }
+         }
+        .comment-article{
+            padding: 10px;
+            height: auto;
+           
+         >div{
+            border: 1px solid #ccc;
+            padding: 10px;
+            .comment-user{
+               line-height: 32px;
+               color: #666;
+            }
+            p{  
+                font-size: 16px;
+                color: #353030;
+            }
+        }
+
+         }
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+// 底部区域/
+#footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    .left{
+        height: 100%;
+        padding: 8px;
+        img{
+            height: 100%;
+            margin-right: 10px;
+        }
+        span{
+            color: #666;
+        }
+    }
+    .right{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+  >a{
+    position: absolute;
+    line-height: 30px;
+    text-align: center;
+    right: 5px;
+    top: 0px;
+    transform: translateY(-60%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    .icon-guanbi{
+        font-size: 30px;
+        color: #666;
+        
+    }
+  }
+}

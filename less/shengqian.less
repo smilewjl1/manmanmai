@@ -1,0 +1,171 @@
+@mainColor: #ff841d;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    border: 0;
+    outline: 0;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+
+#head {
+    background-color: @mainColor ;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    .icon-jiantou-copy {
+        display: inline-block;
+        width: 40px;
+        height: 25px;
+        color: white;
+        font-size: 20px;
+        float: left;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+    }
+    .youhui {
+        font-size: 17px;
+        color: white;
+        float: left;
+        position: absolute;
+        top: 10px;
+        left: 120px;
+    }
+    .download {
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        color: #ccc;
+        float: left;
+        position: absolute;
+        top: 5px;
+        right: 12px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#main {
+    margin-top: 10px;
+    background-color: #fff;
+    ul {
+        li {
+            padding: 5px;
+            border-bottom: 1px solid lightgray;
+            >a {
+                display: block;
+                width: 100%;
+                img {
+                    width: 100px;
+                    height: 90px;
+                    margin: 10px;
+                }
+                .main-right {
+                    margin: 15px;
+                    .title {
+                        color: black;
+                        font-size: 15px;
+                        .price {
+                            color: red;
+                            font-size: 15px;
+                        }
+                    }
+                    .dian {
+                        padding-top: 10px;
+                        font-size: 10px;
+                        .pinglun {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .fenpage {
+        background-color: #ebebeb;
+        margin-top: 5px;
+        padding: 20px;
+        display: flex;
+        .pre {
+            height: 40px;
+            button {
+                height: 40px;
+                float: left;
+            }
+        }
+        .sel {
+            height: 40px;
+            select {
+                border: 1px solid lightgrey;
+                width: 100%;
+            }
+        }
+        .next {
+            height: 40px;
+            button {
+                height: 40px;
+                float: right;
+            }
+        }
+    }
+}
+
+.nav {
+    width: 100%;
+    height: 36px;
+    border-top: solid 1px #ebebeb;
+    border-bottom: 1px solid #ccc;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+    >a {
+        font-size: 14px;
+        color: black;
+        text-align: center;
+        line-height: 38px;
+    }
+}
+
+.foot_top {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 34px;
+    >a {
+        box-sizing: border-box;
+        float: left;
+        color: black;
+        font-size: 14px;
+        border-right: 1px solid #c4c4c4;
+        text-align: center;
+        width: 30%;
+        line-height: 34px;
+    }
+}
+
+.footer {
+    background: #efefef;
+    text-align: center;
+    font-size: 10px;
+    padding: 15px 0;
+    color: #666;
+}

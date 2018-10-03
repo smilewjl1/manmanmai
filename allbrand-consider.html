@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>十大品牌</title>
+    <!-- 引入mui 样式 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="./less/allbrand-consider.less">
+    <script src="./lib/less/less.js"></script>
+
+
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="mui-row">
+            <div class="mui-col-xs-10 header_logo">
+                <a href="index.html">
+                    <img src="./images/header_logo.png" alt="">
+                </a>
+            </div>
+            <div class="mui-col-xs-2 header_app">
+                <a href="http://m.manmanbuy.com/app.html?type=headword&amp;value=wap" title="手机app下载">
+                    <img src="./images/header_app.png" alt="手机app下载">
+                </a>
+
+            </div>
+        </div>
+
+
+    </header>
+    
+    <!-- 品牌大全 -->
+    <section id="morebrand">
+        <div>
+            <a href="index.html">首页</a>
+            >
+            <a href="allbrand.html">品牌大全</a>
+
+        </div>
+    </section>
+
+   
+
+    <!-- 商品列表 -->
+    <section id="screen">
+        <div class="Consider">
+            <span>品牌电视产品销量排行</span>
+
+        </div>
+        <div class="productList">
+            <ul class="product-content">
+                <li>
+                    <a href="#" class="productInfo">
+                        <div class="product-img">
+                            <img src="http://pro-img.zuyushop.com/ProPic/20178/small80/Thumb_2017080009360474424.jpg">
+                        </div>
+                        <div class="product-body">
+
+                            <p class=' product-name'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+                            <span class="price">$3399</span>
+                            <div class="price-comment">
+                                <span class="store">报价(2)</span>
+                                <span class="commentCount">评论(1231)</span>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <section id="coomment">
+        <div class="comment-title">
+            <span>等离子电视最有用的用户评论</span>
+        </div>
+        <div class="comment-content">
+            <a href="#">
+                <div class="comment-product">
+                    <div class="comment-product-img">
+                        <img src="http://pro-img.zuyushop.com/ProPic/20178/small80/Thumb_2017080009360474424.jpg">
+                    </div>
+                    <p>递交时间发送没法看了马拉松的开发了收款单方面试试看免费电视</p>
+                </div>
+            </a>
+            <div class="comment-article">
+                <div>
+                    <div class="mui-clearfix comment-user">
+                        <span class="author mui-pull-left">airoocle</span>
+                        <span class="mui-pull-right">2018/9/13</span>
+                    </div>
+
+                    <p>内容交时间发送没法看了马拉松的开发了收款单方面试试看免费电视
+                        <交时间发送没法看了马拉松的开发了收款单方面试试看免费电视<</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="left">
+            <img src="./images/ic_cu.png" alt="" class="mui-pull-left">
+            <div>
+                <span>慢慢买</span>
+                <p>全网比价. 查历史价格</p>
+            </div>
+        </div>
+        <div class="right mui-pull-right">
+            <button type="button" class="mui-btn-open mui-btn-danger">立即打开</button>
+        </div>
+       <a href="javascript:void(0)"> <i class="iconfont icon-guanbi btn-guanbi"></i></a>
+    </footer>
+    
+
+
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/allbrand-consider.js"></script>
+
+
+    <script type="text/html" id="peoductDetailTmp">
+        {{ if result.length>0}}
+
+        {{ each result value}}
+          <li>
+                <a href="javascript:;" class="productInfo">
+                   <div class="product-img">
+                    {{@ value.productImg}}
+                   </div> 
+                    <div class="product-body">
+                       
+                        <p class='mui-ellipsis product-name'>{{value.productName}}</p>
+                        <span class="price">{{value.productPrice}}</span>
+                        <div class="price-comment">
+                            <span class="store">{{value.productQuote}}</span>
+                            <span class="commentCount" data-product-id="{{value.productId}}" >{{value.productCom}}</span>
+                           
+                        </div>
+                    </div>
+                </a>
+              
+            </li>
+                   {{ /each }}
+                      {{ else}}
+                  <p>此商品暂未排行</p>
+                          {{/if}}
+                </script>
+
+
+
+
+            <script type="text/html" id="commentTmp" >
+            
+                {{ each list value}}
+                <a href="#">
+                        <div class="comment-product">
+                            <div class="comment-product-img">
+                                <img src="http://pro-img.zuyushop.com/ProPic/20178/small80/Thumb_2017080009360474424.jpg">
+                            </div>
+                            <p>乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</p>
+                        </div>
+                    </a>
+                    <div class="comment-article">
+                        <div>
+                            <div class="mui-clearfix comment-user">
+                                <span class="author mui-pull-left">{{value.comName}}</span>
+                                <span class="mui-pull-right">{{value.comTime}}  </span>
+                            </div>
+        
+                            <p>{{value.comContent}} </p>
+                        </div>
+        
+                    </div>
+        
+            {{ /each}}
+            
+            
+            </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>商品列表</title>
+    <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="less/zh-fenlei.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="title">
+            <a href="index.html" class="logo"> <img src="images/header_logo.png" alt=""></a>
+            <a href="#" class="app"><img src="images/header_app.png" alt=""></a>
+        </div>
+        <div class="search">
+            <div class="box">
+                <input type="text" placeholder="&nbsp;&nbsp;请输入你想比价的商品">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <nav id="nav">
+            <!-- <a href="index.html">首页</a>
+<span>></span>
+<a href="zh-bijia.html">全部分类</a>
+<span>></span>
+<a href="#">空调</a>
+<button>筛选</button>
+ -->
+        </nav>
+        <section class="pList">
+            <ul>
+                <!-- <li>
+    <a href="#" class="mui-row">
+        <div class="mui-col-xs-4">
+            <img src="https://img.alicdn.com/bao/uploaded/i1/470168984/TB1kYXzxcUrBKNjSZPxXXX00pXa_!!0-item_pic.jpg_220x220.jpg" />
+        </div>
+        <div class="mui-col-xs-8">
+            <p>阿骨打是个大帅哥撒旦干撒广东韶关萨嘎的</p>
+            <span class="jine">￥11111</span>
+            <div>
+                <span>报价(6)</span>
+                <span>评论(100001100)</span>
+            </div>
+        </div>
+    </a>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+ -->
+            </ul>
+        </section>
+        <section class="fenpage">
+            <div class="mui-col-xs-3 pre">
+                <button>上一页</button>
+            </div>
+            <div class="mui-col-xs-6 sel">
+                <select class="choose" onmousedown="if(this.options.length>6){this.size=7}" onblur="this.size=0" onchange="this.size=0">
+                </select>
+            </div>
+            <div class="mui-col-xs-3 next">
+                <button>下一页</button>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="footerApp">
+            <div class="foot_top">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#" style="width：40%; border:0;">
+                    <img src="images/top.jpg" width="15" height="15">返回顶部
+                </a>
+            </div>
+            <div class="footer">
+                <p>
+                    <a href="#" style="color:red;">手机APP下载</a>
+                    <a style="color:black;">&nbsp;慢慢买手机版</a>— — 掌上比价平台
+                </p>
+                <p style="margin-top:-15px;font-size:13px;color:gray;">
+                    m.manmanbuy.com
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script id="navTmp" type="text/html">
+        {{each result value i}}
+        <a href="index.html">首页</a>
+        <span>></span>
+        <a href="zh-bijia.html">全部分类</a>
+        <span>></span>
+        <a href="#">{{value.category}}</a>
+        <button>筛选</button>
+        {{/each}}
+    </script>
+    <script id="pList" type="text/html">
+        {{each result value i}}
+        <li>
+            <a href="zh-xiangqing.html?productId={{value.productId}}&bName={{value.brandName}}&categoryId={{value.categoryId}}" class="mui-row" data-productid="{{value.productId}}">
+                <div class="mui-col-xs-4">
+                    {{# value.productImg}}
+                </div>
+                <div class="mui-col-xs-8">
+                    <p>{{value.productName}}</p>
+                    <span class="jine">{{value.productPrice}}</span>
+                    <div>
+                        <span>{{value.productQuote}}</span>
+                        <span>{{value.productCom}}</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 引入js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap.js"></script> -->
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap-paginator.js"></script> -->
+    <script src="js/zh-fenlei.js"></script>
+</body>
+
+</html>

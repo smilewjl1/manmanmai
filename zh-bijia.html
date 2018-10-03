@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>比价搜索</title>
+    <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="less/zh-bijia.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="title">
+            <a href="index.html" class="logo"> <img src="images/header_logo.png" alt=""></a>
+            <a href="#" class="app"><img src="images/header_app.png" alt=""></a>
+        </div>
+        <div class="search">
+            <div class="box">
+                <input type="text" placeholder="&nbsp;&nbsp;请输入你想比价的商品">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="aaa1" data-aaa="111"></div>
+        <ul class="mui-table-view">
+            <!-- <li class="mui-table-view-cell mui-collapse">
+    <a class="mui-navigate-right" href="#">111</a>
+    <div class="mui-collapse-content">
+        <div class="mui-row">
+            <div class="mui-col-xs-4">
+                <a href="#">4123</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">142124</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">512</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">124</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">5412</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">5123</a>
+            </div>
+        </div>
+    </div>
+</li>
+<li class="mui-table-view-cell mui-collapse">
+    <a class="mui-navigate-right" href="#">111</a>
+    <div class="mui-collapse-content">
+        <p>222</p>
+        <p>222</p>
+        <p>222</p>
+    </div>
+</li>
+<li class="mui-table-view-cell mui-collapse">
+    <a class="mui-navigate-right" href="#">111</a>
+    <div class="mui-collapse-content">
+        <p>222</p>
+        <p>222</p>
+        <p>222</p>
+    </div>
+</li>
+<li class="mui-table-view-cell mui-collapse">
+    <a class="mui-navigate-right" href="#">111</a>
+    <div class="mui-collapse-content">
+        <p>222</p>
+        <p>222</p>
+        <p>222</p>
+    </div>
+</li>
+<li class="mui-table-view-cell mui-collapse">
+    <a class="mui-navigate-right" href="#">111</a>
+    <div class="mui-collapse-content">
+        <p>222</p>
+        <p>222</p>
+        <p>222</p>
+    </div>
+</li>
+ -->
+        </ul>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="footerApp">
+            <div class="foot_top">
+                <a href="#">登录</a>
+                <a href="#">注册</a>
+                <a href="#" style="width：40%; border:0;">
+                    <img src="images/top.jpg" width="15" height="15">返回顶部
+                </a>
+            </div>
+            <div class="footer">
+                <p>
+                    <a href="#" style="color:red;">手机APP下载</a>
+                    <a style="color:black;">&nbsp;慢慢买手机版</a>— — 掌上比价平台
+                </p>
+                <p style="margin-top:-15px;font-size:13px;color:gray;">
+                    m.manmanbuy.com
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script id="biaoti" type="text/html">
+        {{each result value i}}
+        <li class="mui-table-view-cell mui-collapse" data-titleid="{{value.titleId}}">
+            <a class="mui-navigate-right" href="#">{{value.title}}</a>
+            <div class="mui-collapse-content">
+                <div class="mui-row">
+                    <!-- <div class="mui-col-xs-4">
+    <a href="#">4123</a>
+</div>
+<div class="mui-col-xs-4">
+    <a href="#">142124</a>
+</div>
+<div class="mui-col-xs-4">
+    <a href="#">512</a>
+</div>
+<div class="mui-col-xs-4">
+    <a href="#">124</a>
+</div>
+<div class="mui-col-xs-4">
+    <a href="#">5412</a>
+</div>
+<div class="mui-col-xs-4">
+    <a href="#">5123</a>
+</div>
+ -->
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+    <script id="liebiao" type="text/html">
+        {{each result value i}}
+        <div class="mui-col-xs-4">
+            <a href="zh-fenlei.html?categoryid={{value.categoryId}}" data-titleid="{{value.titleId}}" data-categoryid="{{value.categoryId}}">{{value.category}}</a>
+        </div>
+        {{/each}} {{if result.length%3 == 1}}
+        <div class="mui-col-xs-4"></div>
+        <div class="mui-col-xs-4"></div>
+        {{else if result.length%3 == 2}}
+        <div class="mui-col-xs-4"></div>
+        {{/if}}
+    </script>
+    <!-- 引入js文件 -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap.js"></script> -->
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- <script src="lib/bootstrap/js/bootstrap-paginator.js"></script> -->
+    <script src="js/zh-bijia.js"></script>
+</body>
+
+</html>

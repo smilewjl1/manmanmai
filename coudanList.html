@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>凑单品</title>
+    <!-- 1. 引入mui的CSS文件 提供mui样式 -->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!-- 2. 引入字体图标的CSS文件  提供字体图标-->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入主页的less文件 注意 rel="stylesheet/less"-->
+    <link rel="stylesheet/less" href="less/coudanList.less">
+    <!-- 4. 引入less的编译器文件 编译less -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+        <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="fa fa-chevron-left"></a>
+        <h4>凑单品</h4>
+        <img src="images/header_app.png" alt="">
+    </header>
+    <div class="title">
+        <div class="titleList">
+                <ul class="tab">
+                    <li class="tab-item">京东</li>
+                    <li class="tab-item">华东</li>
+                    <li >全部价格</li>
+                </ul>
+            
+        </div>
+        <div class="titlecontent">
+            <div id="item1" class="item" >
+                <ul class="item1-detail">
+                    <li class="on"><a href="#">京东 </a></li>
+
+                </ul>
+            </div>
+            <div id="item2" class="item" >
+                <ul class="item2-detail">
+                    
+                </ul>
+            </div>
+        </div>
+           
+    </div>
+    <!-- 中间主体区域 -->
+    <main id="main">
+        
+                <!--这里放置真实显示的DOM内容-->
+                <!-- 导航区域 -->
+
+                <!-- 商品详情 -->
+                <div class="shop">
+                    <ul>
+                        
+                    </ul>
+                </div>
+            
+
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+
+    </footer>
+    </div>
+    </div>
+    <script type="text/html" id="popsortTmp">
+        {{each result value i}}
+                <li class="{{i == 0 ? 'on' : ''}}" data-acontent="{{value.shopName}}" data-id="{{value.shopId}}"><a href="#">{{value.shopName}}</a></li> 
+    {{/each}}
+    </script>
+    <script type="text/html" id="poppriceTmp">
+        {{each result value i}}
+        <li class="{{i == 0 ? 'on' : ''}}" data-acontent="{{value.areaName}}" data-id="{{value.areaId}}"><a href="#"  >{{value.areaName}}</a></li>
+    {{/each}}
+
+    </script>
+
+
+    <script type="text/html" id="shopTmp">
+        {{each result value i}}
+        <li>
+        <div class="shoplist">
+                <img src="{{value.productImg}}"
+                    alt="">
+                <p>{{value.productName}}</p>
+                <p> <span><span>{{value.productPrice}}</span></span>
+                    <button type="button" class="mui-btn mui-btn-warning" areaId="{{value.areaId}}" shopId="{{value.shopId}}">去凑单</button></p>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 5. 引入mui的js文件 提供mui js插件-->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 6. 引入zepto的js文件 操作元素发送请求  zepto就相当于jquery-->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 7. 引入模板引擎的js文件 渲染模板的 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 8. 引入主页的js文件 -->
+    <script src="js/coudanList.js"></script>
+</body>
+
+</html>

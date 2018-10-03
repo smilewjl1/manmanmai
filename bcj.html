@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>白菜价</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 引入字体文件 -->
+    <link rel="stylesheet" type="text/css" href="lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="less/bcj.less">
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo">白菜价</a>
+        <form action="#">
+            <input type="search" placeholder="好宝贝 等你搜">
+        </form>
+        <a href="#" class="cate">
+            <i class="iconfont icon-mulu"></i>
+        </a>
+    </header>
+    <main id="main">
+        <!-- 轮播图部分 -->
+        <section id="banner">
+            <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="https://img.alicdn.com/imgextra/i1/2508158775/O1CN012Egzvu9UIZ1hGlk_!!2508158775.jpg" />
+                        </a>
+                    </div>
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="https://img.alicdn.com/imgextra/i4/2508158775/O1CN012EgzvvDwyznJiJ7_!!2508158775.jpg" />
+                        </a>
+                    </div>
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="https://img.alicdn.com/imgextra/i1/2508158775/O1CN012Egzvu9UIZ1hGlk_!!2508158775.jpg" />
+                        </a>
+                    </div>
+                    <!--支持循环，需要重复图片节点-->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="https://img.alicdn.com/imgextra/i4/2508158775/O1CN012EgzvvDwyznJiJ7_!!2508158775.jpg" />
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 全部部分 -->
+        <section id="all">
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="#" class="active">全部</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media">
+                        <div class="mui-media-object mui-pull-left">
+                            <img src="https://gd2.alicdn.com/imgextra/i4/2559357181/TB2eYawX43X61Bjy0FlXXaGtVXa_!!2559357181.jpg_400x400.jpg">
+                        </div>
+                        <div class="mui-media-body">
+                            <div class="product-title">
+                                <span class="b">[包邮]</span>【创彩】纯棉加厚全棉毛巾两条装
+                            </div>
+                            <div class="product-price">
+                                <i>券后</i>
+                                <em>¥</em>8.9
+                                <del>¥19</del>
+                            </div>
+                            <div class="productCouponRemain">
+                                <div class="bar clearfix">
+                                    <a href="http://shop.m.taobao.com/shop/coupon.htm?seller_id=2213057944&activity_id=8cfb336284b5436b9f2c7c9343fa85f1" class="goquan"
+                                        target="_blank"></a>
+                                    <i>
+                                        <em style="width:75%;"></em>
+                                        <span>75%</span>
+                                    </i>
+                                    <b>已领75117张</b>
+                                </div>
+                            </div>
+                            <div class="productCoupon">
+                                <a href="http://shop.m.taobao.com/shop/coupon.htm?seller_id=2213057944&activity_id=8cfb336284b5436b9f2c7c9343fa85f1" target="_blank">点此领10元优惠券</a>
+                            </div>
+                            <div class="productHref">
+                                <a biz-itemid="41869517958" isconvert="1" href="http://s.click.taobao.com/uIULoQx" target="_blank">下单链接</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <i class="iconfont icon-shangjiantou1"></i>
+    </footer>
+    <!-- nav 模板 -->
+    <script id="title" type="text/html">
+    {{each list value i}}
+    {{if i==0}}
+    <li><a class="active" href="#" data-id="{{value.titleId}}">{{value.title}}</a></li>
+    {{else}}
+    <li><a href="#" data-id="{{value.titleId}}">{{value.title}}</a></li>
+    {{/if}}
+    {{/each}}
+</script>
+    <script id="product" type="text/html">
+    {{each}}
+    <li class="mui-table-view-cell mui-media">
+        <div class="mui-media-object mui-pull-left">
+            {{@ $value.productImg}}
+            <!-- <img src="https://gd2.alicdn.com/imgextra/i4/2559357181/TB2eYawX43X61Bjy0FlXXaGtVXa_!!2559357181.jpg_400x400.jpg"> -->
+        </div>
+        <div class="mui-media-body">
+            <div class="product-title">
+                {{@ $value.productName}}
+                <!-- <span class="b">[包邮]</span>【创彩】纯棉加厚全棉毛巾两条装 -->
+            </div>
+            <div class="product-price">
+                {{@ $value.productPrice}}
+                <!-- <i>券后</i><em>¥</em>8.9<del>¥19</del> -->
+            </div>
+            <div class="productCouponRemain clearfix">
+                {{@ $value.productCouponRemain}}
+                <!-- <div class="bar clearfix">
+                    <a href="http://shop.m.taobao.com/shop/coupon.htm?seller_id=2213057944&activity_id=8cfb336284b5436b9f2c7c9343fa85f1"
+                        class="goquan" target="_blank"> </a>
+                    <i><em style="width:75%;"></em><span>75%</span></i><b>已领75117张</b>
+                </div> -->
+            </div>
+            <div class="productCoupon ">
+                {{@ $value.productCoupon}}
+                <!-- <a href="http://shop.m.taobao.com/shop/coupon.htm?seller_id=2213057944&activity_id=8cfb336284b5436b9f2c7c9343fa85f1"
+                    target="_blank">点此领10元优惠券</a> -->
+            </div>
+            <div class="productHref">
+                {{@ $value.productHref}}
+                <!-- <a biz-itemid="41869517958" isconvert="1" href="http://s.click.taobao.com/uIULoQx" target="_blank">下单链接</a> -->
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+    <!-- 引入jQuery -->
+    <script src="lib/jquery/jquery-3.1.1.min.js"></script>
+    <!-- 引入字体文件 -->
+    <!-- 引入zepto -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 引入mui文件 -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 引入白菜价自写js -->
+    <script src="js/bcj.js"></script>
+</body>
+
+</html>

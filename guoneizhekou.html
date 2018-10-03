@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>慢慢买-国内折扣</title>
+    <!--1.引入mui的css文件-->
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <!--2.引入字体图标的css文件-->
+    <link rel="stylesheet" href="lib/font/iconfont.css">
+    <!--3.引入主页的less文件-->
+    <link rel="stylesheet/less" href="less/guoneizhekou.less">
+    <!--4.引入less的编辑器文件-->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--头部区域-->
+    <header id="header">
+        <a href="https://m.manmanbuy.com/" class="logo">
+            <img src="http://static.manmanbuy.com/m/img/mlogo.png">
+        </a>
+        <form action="#" class="search-from">
+            <i class="iconfont icon-search"></i>
+            <input type="search" placeholder="请输入要搜索的商品" class="search">
+        </form>
+        <a target="_blank" class="download" href="http://m.manmanbuy.com/app.html?type=cuxiao&amp;value=waphead">下载</a>
+    </header>
+    <!-- 导航条区域 -->
+    <nav id="nav">
+        <div class="wrap">
+            <ul>
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">省钱控</a>
+                </li>
+                <li>
+                    <a href="#">比价搜索</a>
+                </li>
+                <li class="active">
+                    <a href="guoneizhekou.html">国内折扣</a>
+                </li>
+                <li>
+                    <a href="haitao.html">海淘折扣</a>
+                </li>
+                <li>
+                    <a href="#">查历史价</a>
+                </li>
+                <li>
+                    <a href="#">白菜价</a>
+                </li>
+                <li>
+                    <a href="#">小时风云榜</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--中间主体区域-->
+    <main id="main">
+        <section id="product">
+            <div id="refreshContainer" class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul class="mui-row">
+                        <li class="mui-col-xs-6">
+                            <a href="zhekou.aspx?id=3763144" title="得力(deli)0352 彩色实用迷你型订书机卡式套装(订书机+订书针12#) 3.85元">
+                                <img src="http://wnzk-qiniu.zuyushop.com/r_img/img/20180911/19/5ff3707dc3054448bc7f423a284b74e5.jpg">
+                                <p class="title">得力(deli)0352 彩色实用迷你型订书机卡式套装(订书机+订书针12#)</p>
+                                <p class="subtit">3.85元</p>
+                                <p class="mall">京东商城 | 2018/9/11 19:38</p>
+                            </a>
+                        </li>
+                        <li class="mui-col-xs-6">
+                            <a href="zhekou.aspx?id=3763144" title="得力(deli)0352 彩色实用迷你型订书机卡式套装(订书机+订书针12#) 3.85元">
+                                <img src="http://wnzk-qiniu.zuyushop.com/r_img/img/20180911/19/5ff3707dc3054448bc7f423a284b74e5.jpg">
+                                <p class="title">得力(deli)0352 彩色实用迷你型订书机卡式套装(订书机+订书针12#)</p>
+                                <p class="subtit">3.85元</p>
+                                <p class="mall">京东商城 | 2018/9/11 19:38</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--底部区域-->
+    <footer id="footer">
+        <div class="title">
+            <a href="http://m.manmanbuy.com">首页&nbsp;>&nbsp;</a>
+            <a href="#">国内折扣</a>
+        </div>
+        <div class="mui-row content">
+            <div class="mui-col-xs-4">
+                <a href="#">登录</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">注册</a>
+            </div>
+            <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">
+                    <span>返回顶部</span>
+                </a>
+            </div>
+        </div>
+        <div class="footapp">
+            <p>
+                <a href="http://m.manmanbuy.com/?o=download" style="color: Red;">手机APP下载</a>
+                <a href="http://m.manmanbuy.com">慢慢买手机版</a>
+                <span>掌上比价平台</span>
+            </p>
+            <p> m.manmanbuy.com </p>
+        </div>
+    </footer>
+    <!--商品模板-->
+    <!--mui的下拉刷新插件里面的默认阻止了click事件 只能使用tap a标签的默认跳转也用不了-->
+    <script type="text/html" id="productTem">
+        {{ each result value }}
+            <li class="mui-col-xs-6" data-productid="{{ value.productId }}">
+                <a href="detail.html?id={{ value._id }}" title="{{ value.productName }}">
+                    <!--<img src="http://wnzk-qiniu.zuyushop.com/r_img/img/20180911/19/5ff3707dc3054448bc7f423a284b74e5.jpg">-->
+                    {{@ value.productImg }}
+                    <p class="title">{{ value.productInfo }}</p>
+                    <p class="subtit">{{ value.productPrice }}</p>
+                    <p class="mall">{{ value.productFrom }} | {{ value.productTime }}</p>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+    <!--5.引入mui的js文件-->
+    <script src="lib/mui/js/mui.js"></script>
+    <!--6.引入zepto的js文件 操作元素发送请求-->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!--7.引入模板引擎的js文件-->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!--8.引入主页的js文件-->
+    <script src="js/guoneizhekou.js"></script>
+</body>
+
+</html>

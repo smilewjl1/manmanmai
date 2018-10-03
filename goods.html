@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>省钱控商品详情页面</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" type="text/css" href="lib/font/iconfont.css">
+    <link rel="stylesheet/less" href="less/goods.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="head">
+        <a href="shengqian.html" class="iconfont icon-jiantou-copy">
+        </a>
+        <h4 class="youhui">
+                国内折扣
+        </h4>
+        <a target="_blank" href="#" class="download">
+            <img src="images/header_app.png" alt="">
+        </a>
+    </header>
+    <main id="main">
+        <!-- <h4>移动端凑单品：海天 鲜味 生抽 1.28L</h4>
+<p style="font-size:10px;">京东商城 10-25 14：10 小编烟火/慢慢买</p>
+<p style="width:100%;">
+    <img src="images/pear.jpg" align="right" width="120" hspace="5" vspace="5"> 海天的金标生抽酱油，采用了非转因大豆以及小麦发酵而成，而自然鲜的口感是有些鲜甜鲜甜的感觉，非常适合用来作为日常炒菜用的调味料，当然也能用作白切系列的蘸酱调料，相信吃过美味鲜的慢友们都了解的。目前京东商城移动端售价10.9元。不错的凑单品，刚需可入，规格1.28L。
+</p>
+<img src="images/pear.jpg">
+<div class="golink">
+    <a href="#" target="_blank" style="color:white;">前往购买</a>
+</div>
+ -->
+    </main>
+    <div class="footerApp">
+        <div class="foot_top">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <!--  <a href="#" style="width：40%; border:0;">
+                <img src="images/top.jpg" width="15" height="15">返回顶部
+            </a> -->
+            <a href="#" style="width：40%; border:0;">
+                <i class="iconfont icon-fanhuidingbu" style="font-size:14px;">返回顶部</i>
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="#" style="color:red;">手机APP下载</a>
+                <a style="color:black;">&nbsp;慢慢买手机版</a>— — 掌上比价平台
+            </p>
+            <p style="margin-top:-15px;font-size:13px;color:gray;">
+                m.manmanbuy.com
+            </p>
+        </div>
+    </div>
+</body>
+<script id="goodsTmp" type="text/html">
+    {{each result value i}}
+    <h4>{{value.productName}}</h4>
+    <p style="font-size:10px;">{{value.productFrom}} {{value.productTime}} {{value.productTips}}</p>
+    <p style="width:100%;" class="p1">
+        {{# value.productImgSm}} {{value.productInfo2}}
+    </p>
+    {{# value.productImg2}}
+    <div class="city">
+        {{# value.productCity}}
+    </div>
+    <div class="golink">
+        <a href="#" target="_blank" style="color:white;">前往购买</a>
+    </div>
+    <div class="comment">
+        {{# value.productComment}}
+    </div>
+    {{/each}}
+</script>
+<script src="lib/mui/js/mui.js"></script>
+<!-- 6. 引入zepto的js文件 操作元素发送请求 -->
+<script src="lib/zepto/zepto.min.js"></script>
+<!-- 7. 引入模板引擎的js文件 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- 8. 引入主页的js文件 -->
+<script src="js/goods.js"></script>

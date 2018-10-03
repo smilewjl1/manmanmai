@@ -1,0 +1,121 @@
+@import 'ghq-base.less';
+
+#reminder{
+	background-color: #fff;
+		width: 100%;
+		height: 20px;
+		position: relative;
+		top: 44px;
+		span{
+			display: block;
+			color:#fff;
+			top:44px;
+			margin: auto;
+			text-align: center;
+			color:#ccc;
+		}
+	}
+#main{
+	background-color: #fff;
+	position: relative;
+	top: 44px;
+	.cu-list{
+		margin: 0 auto;
+		background-color: #fff;
+		text-align: left;
+		ul{
+			background-color: #fff;
+			li{
+				border-bottom: 1px solid #ccc;
+				display: block;
+				margin-top: 10px;
+				background-color: #fff;
+				width: 100%;
+				padding: 14px 8px;
+				position: relative;
+				float: left;
+				a{
+					display: block;
+					float: left;
+					.pic{
+						float: left;
+						width: 30%;
+						img{
+							width: 100px;
+							height: 100px;
+						}
+					}
+					.info{
+						width: 70%;
+						float: left;
+						//padding-left: 90px;
+						font-size: 14px;
+						line-height: 24px;
+						.title{
+							color:#333;
+							text-align: left;
+							span{
+								display: block;
+							}
+						}
+						.other{
+							text-align: left;
+							margin-top: 20px;
+							color:orange;
+						}
+					}
+					.fa-angle-right{
+						float: right;
+						font-size: 30px;
+						color:#666;
+						line-height: 24px;
+						position: absolute;
+						right: 10px;
+						top: 70px;
+					}
+				}
+			}
+		}
+	}
+}
+.mask{
+	.mui-slider-group{
+		.mui-slider-item{
+				a{
+					position: relative;
+					#arr {
+						position: absolute;
+						height: 40px;
+						top: 300px;
+            		>span{
+            			width: 40px;
+            			height: 40px;
+            			position: absolute;
+            			left: 5px;
+            			top: 50%;
+            			margin-top: -20px;
+            			background: #000;
+            			cursor: pointer;
+            			line-height: 40px;
+            			text-align: center;
+            			font-weight: bold;
+            			font-family: '黑体';
+            			font-size: 30px;
+            			color: #fff;
+            			opacity: 0.3;
+            			border: 1px solid #fff;
+            	  		}
+            	  	 #right {
+            			right: 5px;
+            			left: auto;
+        					}
+        		    	}
+				img{
+						top: 300px;
+						height: auto;
+						width: 95%;
+				}
+			}
+		}
+	}
+}
